@@ -4,6 +4,7 @@ var oar = [2, 6, 9];
 var svg = document.getElementById("svg");
 var bgermany = document.getElementById("germany");
 var boar = document.getElementById("oar");
+var p = document.getElementById('text');
 
 var c1 = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 c1.setAttribute("cx", 50);
@@ -35,6 +36,7 @@ var g=function(e){
 		.selectAll("circle")
 		.data(germany)
 		.attr("r",function(d) {return d*3;});
+    p.innerHTML = germany[0] + " gold medals, " + germany[1] + " silver medals, " + germany[2] + " bronze medals";
 };
 
 var r=function(e){
@@ -42,6 +44,7 @@ var r=function(e){
 		.selectAll("circle")
 		.data(oar)
 		.attr("r",function(d) {return d*3;});
+    p.innerHTML = oar[0] + " gold medals, " + oar[1] + " silver medals, " + oar[2] + " bronze medals";
 };
 
 bgermany.addEventListener('click', g);
